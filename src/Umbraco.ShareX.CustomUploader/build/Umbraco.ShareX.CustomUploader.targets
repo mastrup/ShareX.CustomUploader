@@ -1,0 +1,21 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <UmbracoShareXCustomUploaderContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\Umbraco.ShareX.CustomUploader\**\*.*</UmbracoShareXCustomUploaderContentFilesPath>
+    </PropertyGroup>
+
+    <Target Name="CopyUmbracoShareXCustomUploaderAssets" BeforeTargets="Build">
+        <ItemGroup>
+            <UmbracoShareXCustomUploaderContentFiles Include="$(UmbracoShareXCustomUploaderContentFilesPath)" />
+        </ItemGroup>
+        <Message Text="Copying Umbraco.ShareX.CustomUploader files: $(UmbracoShareXCustomUploaderContentFilesPath) - #@(UmbracoShareXCustomUploaderContentFiles->Count()) files" Importance="high" />
+        <Copy SourceFiles="@(UmbracoShareXCustomUploaderContentFiles)" DestinationFiles="@(UmbracoShareXCustomUploaderContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\Umbraco.ShareX.CustomUploader\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    </Target>
+    
+    <Target Name="ClearUmbracoShareXCustomUploaderAssets" BeforeTargets="Clean">
+        <ItemGroup>
+            <UmbracoShareXCustomUploaderDir Include="$(MSBuildProjectDirectory)\App_Plugins\Umbraco.ShareX.CustomUploader\" />
+        </ItemGroup>
+        <Message Text="Clear old Umbraco.ShareX.CustomUploader data" Importance="high" />
+        <RemoveDir Directories="@(UmbracoShareXCustomUploaderDir)" />
+    </Target>
+</Project>
