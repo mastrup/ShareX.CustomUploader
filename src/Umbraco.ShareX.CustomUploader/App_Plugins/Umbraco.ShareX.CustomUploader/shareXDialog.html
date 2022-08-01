@@ -1,0 +1,30 @@
+<div class="umb-dialog-body">
+    <div class="umb-pane">
+        <p class="abstract">
+            Get the Custom Uploader code to add in ShareX to be able to upload to this folder.
+        </p>
+        <ol>
+            <li>Copy the below code to your clipboard.</li>
+            <li>Open the ShareX window.</li>
+            <li>Click the "Destinations" drop-down then click "Custom uploader settings...".</li>
+            <li>Click the "Import" drop-down then click "From clipboard".</li>
+            <li>Make sure the uploaders are set to Umbraco.</li>
+        </ol>
+
+        <pre>{
+    "Version": "13.1.0",
+    "Name": "Umbraco",
+    "DestinationType": "ImageUploader, TextUploader, FileUploader",
+    "RequestType": "POST",
+    "RequestURL": "https://s-ul.eu/api/v1/upload",
+    "Arguments": {
+        "wizard": "true",
+        "key": "mykey65498465416546546541"
+    },
+    "FileFormName": "file",
+    "URL": "$json:url$",
+    "ThumbnailURL": "$json:url$?thumb=1",
+    "DeletionURL": "https://s-ul.eu/delete.php?key=mykey65498465416546546541&amp;file=$json:filename$"
+}</pre>
+    </div>
+</div>

@@ -30,4 +30,8 @@
 			<PackagePath>buildTransitive</PackagePath>
 		</None>
 	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="App_Plugins\Umbraco.ShareX.CustomUploader\shareXDialog.html" />
+	</ItemGroup>
 </Project>
