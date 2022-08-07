@@ -2,10 +2,12 @@
 	<PropertyGroup>
 		<TargetFramework>net6.0</TargetFramework>
 		<ContentTargetFolders>.</ContentTargetFolders>
-		<Product>Umbraco.ShareX.CustomUploader</Product>
-		<PackageId>Umbraco.ShareX.CustomUploader</PackageId>
-		<Title>Umbraco.ShareX.CustomUploader</Title>
-		<Description>...</Description>
+		<Product>ShareX.CustomUploader</Product>
+		<PackageId>ShareX.CustomUploader</PackageId>
+		<Title>ShareX.CustomUploader</Title>
+		<Description>This package adds a context menu to all folders in the Umbraco Media section. In the context menu you will find a JSON object that can be inserted in the screen capture tool ShareX.
+
+After configuring ShareX with the JSON, you will be able to upload screenshots and screen captures directly to your own Umbraco Installation.</Description>
 		<PackageTags>umbraco plugin package</PackageTags>
 	</PropertyGroup>
 
@@ -16,7 +18,7 @@
 		<PackageProjectUrl></PackageProjectUrl>
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
-		<RepositoryUrl>https://github.com/mastrup/Umbraco.ShareX.CustomUploader</RepositoryUrl>
+		<RepositoryUrl>https://github.com/mastrup/ShareX.CustomUploader</RepositoryUrl>
 	</PropertyGroup>
 
 	<ItemGroup>
@@ -25,7 +27,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<Content Include="App_Plugins\Umbraco.ShareX.CustomUploader\**">
+		<Content Include="App_Plugins\ShareX.CustomUploader\**">
+
 			<ExcludeFromSingleFile>true</ExcludeFromSingleFile>
 			<CopyToPublishDirectory>Always</CopyToPublishDirectory>
 		</Content>
@@ -36,8 +39,8 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="App_Plugins\Umbraco.ShareX.CustomUploader\ShareXDialog.Controller.js" />
-	  <None Remove="App_Plugins\Umbraco.ShareX.CustomUploader\shareXDialog.html" />
+	  <None Remove="App_Plugins\ShareX.CustomUploader\ShareXDialog.Controller.js" />
+	  <None Remove="App_Plugins\ShareX.CustomUploader\shareXDialog.html" />
 	</ItemGroup>
 
 	<ItemGroup>

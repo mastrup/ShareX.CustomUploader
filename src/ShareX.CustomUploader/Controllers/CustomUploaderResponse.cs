@@ -1,10 +1,9 @@
-﻿
-using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Http;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Web.BackOffice.Controllers;
-using Umbraco.ShareX.CustomUploader.Models;
+using ShareX.CustomUploader.Models;
 
-namespace Umbraco.ShareX.CustomUploader.Controllers
+namespace ShareX.CustomUploader.Controllers
 {
     public class CustomUploaderResponseController : UmbracoAuthorizedApiController
     {

@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace Umbraco.ShareX.CustomUploader.Models
+namespace ShareX.CustomUploader.Models
 {
     public class CustomUploaderModel
     {

@@ -24,10 +24,10 @@
 		<Folder Include="wwwroot" />
 	</ItemGroup>
 
-	<Import Project="..\Umbraco.ShareX.CustomUploader\build\Umbraco.ShareX.CustomUploader.targets" />
+	<Import Project="..\ShareX.CustomUploader\build\ShareX.CustomUploader.targets" />
 	
 	<ItemGroup>
-		<ProjectReference Include="..\Umbraco.ShareX.CustomUploader\Umbraco.ShareX.CustomUploader.csproj" />
+		<ProjectReference Include="..\ShareX.CustomUploader\ShareX.CustomUploader.csproj" />
 	</ItemGroup>
 
 	<!-- Keep this as false if ModelsBuilder mode is InMemoryAuto -->

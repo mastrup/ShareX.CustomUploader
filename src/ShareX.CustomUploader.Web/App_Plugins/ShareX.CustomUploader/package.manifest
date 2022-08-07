@@ -1,0 +1,8 @@
+﻿{
+  "name": "ShareX.CustomUploader",
+  "version": "1.0.0",
+  "allowPackageTelemetry": true,
+  "javascript": [
+    "~/App_Plugins/ShareX.CustomUploader/ShareXDialog.Controller.js"
+  ]
+}

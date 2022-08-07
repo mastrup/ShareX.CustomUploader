@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Umbraco.ShareX.CustomUploader.Models
+namespace ShareX.CustomUploader.Models
 {
     public class UploadResponse
     {

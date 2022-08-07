@@ -7,7 +7,7 @@ using Umbraco.Cms.Core.Composing;
 using Umbraco.Cms.Core.DependencyInjection;
 using Umbraco.Cms.Core.Notifications;
 
-namespace Umbraco.ShareX.CustomUploader
+namespace ShareX.CustomUploader
 {
     public class ShareXBoot : IComposer
     {

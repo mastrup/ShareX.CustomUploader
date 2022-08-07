@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32602.215
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.ShareX.CustomUploader", "src\Umbraco.ShareX.CustomUploader\Umbraco.ShareX.CustomUploader.csproj", "{EB092064-941F-4E9B-91F8-27D363E90CE4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX.CustomUploader", "src\ShareX.CustomUploader\ShareX.CustomUploader.csproj", "{EB092064-941F-4E9B-91F8-27D363E90CE4}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Umbraco.ShareX.CustomUploader.Web", "src\Umbraco.ShareX.CustomUploader.Web\Umbraco.ShareX.CustomUploader.Web.csproj", "{2CC0A63C-32CB-4CCC-B7C9-0D07CB4A6975}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShareX.CustomUploader.Web", "src\ShareX.CustomUploader.Web\ShareX.CustomUploader.Web.csproj", "{2CC0A63C-32CB-4CCC-B7C9-0D07CB4A6975}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

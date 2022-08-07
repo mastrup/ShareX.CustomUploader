@@ -1,8 +1,0 @@
-﻿{
-  "name": "Umbraco.ShareX.CustomUploader",
-  "version": "",
-  "allowPackageTelemetry": true,
-  "javascript": [
-    "~/App_Plugins/Umbraco.ShareX.CustomUploader/ShareXDialog.Controller.js"
-  ]
-}

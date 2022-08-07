@@ -1,9 +1,6 @@
 ﻿using Microsoft.AspNetCore.Routing;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Umbraco.Cms.Core;
 using Umbraco.Cms.Core.Events;
 using Umbraco.Cms.Core.Models.Trees;
@@ -12,7 +9,7 @@ using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Extensions;
 
-namespace Umbraco.ShareX.CustomUploader
+namespace ShareX.CustomUploader
 {
     public class ShareXNotificationHandler :
         INotificationHandler<ServerVariablesParsingNotification>,
@@ -68,7 +65,7 @@ namespace Umbraco.ShareX.CustomUploader
                     SeparatorBefore = true
                 };
 
-                item.AdditionalData.Add("actionView", "/App_Plugins/Umbraco.ShareX.CustomUploader/shareXDialog.html");
+                item.AdditionalData.Add("actionView", "/App_Plugins/ShareX.CustomUploader/shareXDialog.html");
 
                 notification.Menu.Items.Insert(notification.Menu.Items.Count - 1, item);
             }

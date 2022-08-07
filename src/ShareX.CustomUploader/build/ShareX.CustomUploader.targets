@@ -1,0 +1,21 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ShareXCustomUploaderContentFilesPath>$(MSBuildThisFileDirectory)..\App_Plugins\ShareX.CustomUploader\**\*.*</ShareXCustomUploaderContentFilesPath>
+    </PropertyGroup>
+
+    <Target Name="CopyShareXCustomUploaderAssets" BeforeTargets="Build">
+        <ItemGroup>
+            <ShareXCustomUploaderContentFiles Include="$(ShareXCustomUploaderContentFilesPath)" />
+        </ItemGroup>
+        <Message Text="Copying ShareX.CustomUploader files: $(ShareXCustomUploaderContentFilesPath) - #@(ShareXCustomUploaderContentFiles->Count()) files" Importance="high" />
+        <Copy SourceFiles="@(ShareXCustomUploaderContentFiles)" DestinationFiles="@(ShareXCustomUploaderContentFiles->'$(MSBuildProjectDirectory)\App_Plugins\ShareX.CustomUploader\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+    </Target>
+    
+    <Target Name="ClearShareXCustomUploaderAssets" BeforeTargets="Clean">
+        <ItemGroup>
+            <ShareXCustomUploaderDir Include="$(MSBuildProjectDirectory)\App_Plugins\ShareX.CustomUploader\" />
+        </ItemGroup>
+        <Message Text="Clear old ShareX.CustomUploader data" Importance="high" />
+        <RemoveDir Directories="@(ShareXCustomUploaderDir)" />
+    </Target>
+</Project>

@@ -14,9 +14,9 @@ using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Core.Strings;
 using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Extensions;
-using Umbraco.ShareX.CustomUploader.Models;
+using ShareX.CustomUploader.Models;
 
-namespace Umbraco.ShareX.CustomUploader.Controllers
+namespace ShareX.CustomUploader.Controllers
 {
     public class ShareXController : UmbracoApiController
     {
