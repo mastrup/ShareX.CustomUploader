@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,19 +25,22 @@ namespace Umbraco.ShareX.CustomUploader.Controllers
         private readonly MediaUrlGeneratorCollection _mediaUrlGenerators;
         private IShortStringHelper _shortStringHelper;
         private IContentTypeBaseServiceProvider _contentTypeBaseServiceProvider;
+        private readonly ILogger<ShareXController> _logger;
 
         public ShareXController(IMediaService mediaService,
                                 MediaFileManager mediaFileManager,
                                 MediaUrlGeneratorCollection mediaUrlGenerators,
                                 IShortStringHelper shortStringHelper,
                                 IContentTypeBaseServiceProvider contentTypeBaseServiceProvider,
-                                IJsonSerializer serializer)
+                                IJsonSerializer serializer,
+                                ILogger<ShareXController> logger)
         {
             _mediaService = mediaService;
             _mediaFileManager = mediaFileManager;
             _mediaUrlGenerators = mediaUrlGenerators;
             _shortStringHelper = shortStringHelper;
             _contentTypeBaseServiceProvider = contentTypeBaseServiceProvider;
+            _logger = logger;
         }
 
         [HttpPost]
@@ -50,8 +54,22 @@ namespace Umbraco.ShareX.CustomUploader.Controllers
             return createdFiles;
         }
 
+        public string Delete(Guid key)
+        {
+            var media = _mediaService.GetById(key);
+            if(media != null)
+            {
+                _mediaService.Delete(media);
+                _logger.LogInformation($"Deleted media item '{media.Name}' (Key: {key}). Located in path '{media.Path}'");
+                return $"Deleted {media.Name} with key '{key}'";
+            }
+            return $"Item with key '{key}' was not found.";
+        }
+
         private UploadResponse UploadFiles(Guid key, IFormFileCollection files)
         {
+            var request = HttpContext.Request;
+            var baseUrl = $"{request.Scheme}://{request.Host.Value}";
             var response = new UploadResponse();
 
             if(_mediaService.GetById(key) == null)
@@ -67,10 +85,10 @@ namespace Umbraco.ShareX.CustomUploader.Controllers
                     string extension = Path.GetExtension(file.FileName);
                     var extensions = new Dictionary<string[], string>()
                     {
-                        { new[] { ".pdf", ".docx", ".doc" }, Constants.Conventions.MediaTypes.Article },
-                        { new[] { ".mp3", ".weba", ".oga", ".opus" }, Constants.Conventions.MediaTypes.Audio},
-                        { new[] { ".svg" }, Constants.Conventions.MediaTypes.VectorGraphics },
-                        { new[] { ".mp4", ".webm", ".ogv" }, Constants.Conventions.MediaTypes.Video},
+                        { new[] { ".pdf", ".docx", ".doc" }, Constants.Conventions.MediaTypes.ArticleAlias },
+                        { new[] { ".mp3", ".weba", ".oga", ".opus" }, Constants.Conventions.MediaTypes.AudioAlias},
+                        { new[] { ".svg" }, Constants.Conventions.MediaTypes.VectorGraphicsAlias },
+                        { new[] { ".mp4", ".webm", ".ogv" }, Constants.Conventions.MediaTypes.VideoAlias},
                         { new[] { ".jpeg", ".jpg", ".gif", ".bmp", ".png", ".tiff", ".tif" }, Constants.Conventions.MediaTypes.Image},
                     };
 
@@ -81,9 +99,9 @@ namespace Umbraco.ShareX.CustomUploader.Controllers
                     mediaItem.SetValue(_mediaFileManager, _mediaUrlGenerators, _shortStringHelper, _contentTypeBaseServiceProvider, Constants.Conventions.Media.File, file.FileName, file.OpenReadStream());
                     _mediaService.Save(mediaItem);
 
-                    response.Url = mediaItem.GetUrl(Constants.Conventions.Media.File, _mediaUrlGenerators);
-                    response.ThumbnailUrl = $"{response.Url}?width=500&height=500";
-                    response.DeletionUrl = "deletion URL";
+                    response.Url = baseUrl + mediaItem.GetUrl(Constants.Conventions.Media.File, _mediaUrlGenerators);
+                    response.ThumbnailUrl = $"{response.Url}?width=500";
+                    response.DeletionUrl = $"{baseUrl}/umbraco/api/sharex/delete/?key={mediaItem.Key}";
                 }
             }
 

@@ -11,6 +11,6 @@ namespace Umbraco.ShareX.CustomUploader.Models
         public string Url { get; set; } = "";
         public string ThumbnailUrl { get; set; } = "";
         public string DeletionUrl { get; set; } = "";
-        public string ErrorMessage { get; set; }
+        public string ErrorMessage { get; set; } = "";
     }
 }
