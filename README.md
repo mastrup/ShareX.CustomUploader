@@ -13,7 +13,9 @@ After restarting your site, you'll find a new context menu item on your media fo
 
 The dialog generates the needed JSON to use with ShareX. After configuring ShareX, you will be able to upload images, text and video directly to your Umbraco media archive.
 
-![ShareX Custom Uploader](assets/screenshot.png "ShareX Custom Uploader screnshot")
+![ShareX Custom Uploader](https://raw.githubusercontent.com/mastrup/ShareX.CustomUploader/main/assets/screenshot.png "ShareX Custom Uploader screnshot")
+
+
 
 ### Configuring ShareX
 
