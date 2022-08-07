@@ -1,4 +1,4 @@
-# Umbraco.ShareX.CustomUploader
+# ShareX.CustomUploader
 
 ## Prerequisites
 Requires at least Umbraco 10.0.0.
@@ -6,7 +6,7 @@ Requires at least Umbraco 10.0.0.
 ## How To Use
 ### Installation
 
-Install Umbraco.ShareX.CustomUploader via NuGet: `Install-Package Umbraco.ShareX.CustomUploader`.
+Install ShareX.CustomUploader via NuGet: `Install-Package ShareX.CustomUploader`.
 
 After restarting your site, you'll find a new context menu item on your media folders - 'ShareX Custom Uploader'.
 
