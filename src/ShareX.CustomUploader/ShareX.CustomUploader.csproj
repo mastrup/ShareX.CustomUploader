@@ -19,6 +19,8 @@ After configuring ShareX with the JSON, you will be able to upload screenshots a
 		<PackageIcon>logo.png</PackageIcon>
 		<PackageReadmeFile>README.md</PackageReadmeFile>
 		<RepositoryUrl>https://github.com/mastrup/ShareX.CustomUploader</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<PackageReleaseNotes>Release package</PackageReleaseNotes>
 	</PropertyGroup>
 
 	<ItemGroup>
