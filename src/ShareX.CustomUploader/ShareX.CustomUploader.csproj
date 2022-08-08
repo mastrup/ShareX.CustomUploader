@@ -21,6 +21,7 @@ After configuring ShareX with the JSON, you will be able to upload screenshots a
 		<RepositoryUrl>https://github.com/mastrup/ShareX.CustomUploader</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
 		<PackageReleaseNotes>Updated dialog to use the &lt;umb-code-snippet&gt; directive instead of &lt;pre&gt; tag.</PackageReleaseNotes>
+		<PackageLicenseExpression>MIT</PackageLicenseExpression>
 	</PropertyGroup>
 
 	<ItemGroup>
