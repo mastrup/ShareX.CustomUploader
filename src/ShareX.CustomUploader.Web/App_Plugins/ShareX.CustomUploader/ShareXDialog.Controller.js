@@ -1,7 +1,7 @@
 ﻿(function () {
     "use strict";
 
-    function ShareXDialog($scope, $http, mediaResource, notificationsService, navigationService) {
+    function ShareXDialog($scope, $http, mediaResource, navigationService) {
 
         var vm = this;
         var node = $scope.currentNode;
@@ -18,12 +18,6 @@
                 vm.uploaderModel = response.data;
                 vm.loaded = true;
             });
-
-        $scope.copyToClipboard = function () {
-            navigator.clipboard.writeText(JSON.stringify(vm.uploaderModel));
-            notificationsService.info("ShareX Custom Uploader", "The code has been copied to your clipboard.");
-            navigationService.hideDialog();
-        }
     }
 
     angular.module("umbraco").controller("ShareXDialog.Controller", ShareXDialog);
