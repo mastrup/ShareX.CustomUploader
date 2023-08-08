@@ -2,7 +2,7 @@
 [![Nuget](https://img.shields.io/nuget/v/ShareX.CustomUploader)](https://www.nuget.org/packages/ShareX.CustomUploader/)
 
 ## Prerequisites
-Requires at least Umbraco 10.0.0.
+Requires at least Umbraco 10.6.1.
 
 ## How To Use
 ### Installation
