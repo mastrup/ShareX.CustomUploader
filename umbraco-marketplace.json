@@ -1,0 +1,21 @@
+{
+  "$schema": "https://marketplace.umbraco.com/umbraco-marketplace-schema.json",
+  "AuthorDetails": {
+    "Name": "Søren Mastrup",
+    "Description": "Søren works at Danfoss A/S as Lead Consultant for MyDanfoss and web development. This package is provided in a personal capacity.",
+    "Url": "https://github.com/mastrup",
+    "ImageUrl": "https://github.com/mastrup.png"
+  },
+  "Category": "Editor Tools",
+  "LicenseTypes": [ "Free" ],
+  "IssueTrackerUrl": "https://github.com/mastrup/ShareX.CustomUploader/issues",
+  "PackageType": "Package",
+  "Screenshots": [
+    {
+      "ImageUrl": "https://raw.githubusercontent.com/mastrup/ShareX.CustomUploader/main/assets/screenshot.png",
+      "Caption": "In the context menu you will find a JSON object that can be inserted in the screen capture tool ShareX."
+    }
+  ],
+  "Tags": ["ShareX", "screenshot", "capture", "media", "upload"],
+  "Title": "ShareX Custom Uploader"
+}
